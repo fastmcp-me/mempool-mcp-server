@@ -103,4 +103,4 @@ The server will start and listen for MCP requests via standard input/output. �
 
 ---
 
-Made with ❤️ by the community. Happy hacking!
+Made with ❤️ by a bitcoiner. Happy hacking!
