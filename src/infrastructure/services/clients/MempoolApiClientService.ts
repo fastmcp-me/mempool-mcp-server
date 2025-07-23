@@ -1,13 +1,13 @@
 import { IApiClient } from "../../interfaces/IApiClient.js";
 
 export class MempoolApiClientService implements IApiClient {
-  private readonly BASE_API = "https://mempool.space/api";
+
   private readonly API_VERSION = "v1";
 
-  constructor() {}
+  constructor(private baseUrl: string) {}
 
   async makeRequest<T>(endpoint: string): Promise<T | null> {
-    const url = `${this.BASE_API}/${this.API_VERSION}/${endpoint}`;
+    const url = `${this.baseUrl}/${this.API_VERSION}/${endpoint}`;
     const headers = {
       Accept: "application/json",
     };

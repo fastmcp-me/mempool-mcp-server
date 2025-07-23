@@ -52,11 +52,25 @@ You can configure this server as a tool provider in your MCP-compatible client i
 ### 📦 Using the Published NPM Package
 
 ```json
-"mempool-mcp-server-npx": {
+"mempool-mcp-server": {
   "command": "npx",
   "args": [
     "@sanlim/mempool-mcp-server"
   ]
+},
+```
+
+To local connection to privacy and unlimited call you can pass the base mempool api URL as a env config from your local Bitcoin node as Umbrel, MyNode and etc. See bellow:
+
+```json
+"mempool-mcp-server-local": {
+  "command": "npx",
+  "args": [
+    "@sanlim/mempool-mcp-server"
+  ],
+    "env": {
+    "MEMPOOL_BASE_URL": "http://umbrel.local:3006/api"
+  }
 },
 ```
 
@@ -83,7 +97,7 @@ npm run server
 3. **Configure your MCP client:**
 
 ```json
-"mempool-mcp-server": {
+"mempool-mcp-server-debug": {
   "command": "node",
   "args": [
     "/Users/aleguest/Desktop/workspace/mempool-mcp-server/build/main.js"
@@ -103,4 +117,4 @@ The server will start and listen for MCP requests via standard input/output. �
 
 ---
 
-Made with ❤️ by a bitcoiner. Happy hacking!
+Made with ❤️ by a bitcoiner. Enjoy!

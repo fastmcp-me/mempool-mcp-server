@@ -8,25 +8,26 @@ npm run server
 
 ```
 
-## Publish as a NPM package
+## Run on local Bitcoin node as Umbrel
 
-- First, put a name on package.json file and follow it:
+```bash
+node build/main.js --base-url http://umbrel.local:3006/api
+```
+
+
+
+## Help
 
 ```bash
 
-npm login
-npm publish
+node build/main.js --help
 
 ```
 
-## Debug server
+## Debug with inspector
 
 ```bash
-
 npx @modelcontextprotocol/inspector node main.js
-npx @modelcontextprotocol/inspector .../path/main.js args...
-npx mempool-mcp-server --help
-
 ```
 
 ## Debug server with Clause (See logs)
