@@ -1,131 +1,106 @@
-# MCP Server DDD Sample
+# 🚀 Mempool MCP Server
 
-This repository is a **sample implementation** of a Model Context Protocol (MCP) server in Node.js/TypeScript, designed to demonstrate a clean, layered architecture using Domain-Driven Design (DDD) principles. It provides tools to obtain Bitcoin-related information via external APIs.
+A Model Context Protocol (MCP) server providing real-time Bitcoin blockchain and mempool data, powered by [mempool.space](https://mempool.space/) APIs. Use this server as a tool provider in your MCP-compatible clients (like Claude, Cursor, and others) to access up-to-date Bitcoin network information.
 
-## Key Points
+---
 
-- **Sample Project:** This codebase is intended as a reference for structuring MCP servers with DDD, not for production use.
-- **MCP Protocol:** Communicates via _stdio_ using the MCP protocol (`@modelcontextprotocol/sdk`).
-- **Layered DDD Architecture:** Clear separation of domain, application, infrastructure, and interface layers.
+## 🛠️ Available Bitcoin Tools
 
-## Project Structure
+- **get-difficulty-adjustment**: Get current and next Bitcoin difficulty adjustment info.
+- **get-price**: Get the current BTC price in various fiat currencies.
+- **get-historical-price**: Get the BTC price for a specific date (YYYY-MM-DD).
+- **get-recommended-fees**: Get recommended Bitcoin transaction fees.
+- **get-stats-info**: Get general Bitcoin network statistics.
+- **get-mining-pools**: Get mining pools info.
+- **get-mining-pool**: Get info for a specific mining pool.
+- **get-mining-blocks-fees-24h**: Get mining blocks fees for the last 24h.
+- **get-mempool-info**: Get mempool info.
+- **get-mempool-txids**: Get mempool txids.
+- **get-mempool-recent**: Get recent mempool transactions.
+- **get-blocks**: Get the latest blocks.
+- **get-block**: Get details about a block from its hash.
+- **get-block-txids**: Get txids for a block.
+- **get-block-txs**: Get transactions for a block.
+- **get-block-status**: Get block status.
+- **get-block-raw**: Get raw block hex.
+- **get-block-txid-by-index**: Get block txid by index.
+- **get-block-header**: Get the block header in hex.
+- **get-address-info**: Get details about an address.
+- **get-address-txs**: Get transactions for an address.
+- **get-address-txs-chain**: Get chain transactions for an address.
+- **get-address-txs-mempool**: Get mempool transactions for an address.
+- **get-address-utxo**: Get UTXOs for an address.
+- **get-tx-info**: Get details about a transaction.
+- **get-tx-status**: Get transaction status.
+- **get-tx-raw**: Get raw transaction hex.
+- **get-tx-merkleblock-proof**: Get transaction merkleblock proof.
+- **get-tx-outspend**: Get outspend info for a transaction output.
+- **get-tx-outspends**: Get outspends for all outputs of a transaction.
 
+---
+
+## 🤖 What is MCP?
+
+**Model Context Protocol (MCP)** is a standard for tool providers to communicate with AI clients via standard input/output. This server lets you plug Bitcoin data tools into any MCP-compatible client.
+
+---
+
+## ⚡ Quick Start: Use in Your MCP Client
+
+You can configure this server as a tool provider in your MCP-compatible client in two ways:
+
+### 📦 Using the Published NPM Package
+
+```json
+"mempool-mcp-server-npx": {
+  "command": "npx",
+  "args": [
+    "@sanlim/mempool-mcp-server"
+  ]
+},
 ```
-src/
-├── domain/                  # Domain models and response interfaces
-│   └── models/
-│       └── responses/
-│           ├── block/
-│           │   └── IBlockResponse.ts
-│           └── fees/
-│               └── IFeesRecommendedResponse.ts
-├── infrastructure/          # External API clients and request services
-│   ├── interfaces/
-│   │   └── IApiClient.ts
-│   └── services/
-│       ├── clients/
-│       │   └── MempoolApiClientService.ts
-│       └── requests/
-│           ├── BlockRequestService.ts
-│           └── FeesRequestService.ts
-├── application/             # Business logic and helpers
-│   ├── services/
-│   │   ├── BlockService.ts
-│   │   └── FeesService.ts
-│   └── helpers/
-│       └── format.ts
-├── interface/               # Controllers (MCP tool registration)
-│   └── controllers/
-│       ├── base/
-│       │   └── BaseToolsController.ts
-│       ├── BlockToolsController.ts
-│       ├── FeesToolsController.ts
-│       ├── PingController.ts
-│       └── index.ts
-├── shared/                  # Shared types/parameters
-│   └── parameters/
-│       └── IBlockRequestParameter.ts
-└── main.ts                  # Application entry point
-```
 
-## Getting Started
+Enjoy!
+
+or
+
+### 🛠️ Using a Local Build
+
+1. **Clone this repository:**
 
 ```bash
 git clone https://github.com/alexandresanlim/mempool-mcp-server.git
-cd mempool-mcp-server
+```
+
+2. **Install and build:**
+
+```bash
 npm install
 npm run build
+npm run server
 ```
 
-## Usage
-
-After building, you can run the server directly:
-
-```bash
-node build/main.js
-```
-
-Or, if registered as a binary (for example, `mempool-mcp-server`):
-
-```bash
-npm link
-mempool-mcp-server
-```
-
-The server will start on standard output (_stdio_) and wait for MCP requests.
-
-## Example Tools (Sample)
-
-- **get-recommended-fees**: Get recommended Bitcoin transaction fees.
-
-## Integration Example
-
-To use this MCP server as a tool provider in a client (e.g., Claude client), you can either reference a local build or use the published npm package.
-
-### Using Local Build Path
+3. **Configure your MCP client:**
 
 ```json
-"btc-server": {
-    "command": "node",
-    "args": [
-        "{your path project}/mempool-mcp-server/build/main.js"
-    ]
+"mempool-mcp-server": {
+  "command": "node",
+  "args": [
+    "/Users/aleguest/Desktop/workspace/mempool-mcp-server/build/main.js"
+  ]
 },
 ```
 
-### Using the Published NPM Package
+The server will start and listen for MCP requests via standard input/output. 🎉
 
-If the package is published to npm as `mempool-mcp-server`, you can use `npx` to run it directly without cloning or building:
+---
 
-```json
-"mcp-ddd-server-package": {
-    "command": "npx",
-    "args": [
-        "mempool-mcp-server"
-    ]
-},
-```
+## 📚 Reference & Troubleshooting
 
-This allows you to always use the latest published version from npm.
+- Full API reference: [mempool.space API docs](https://mempool.space/docs/api/rest)
+- If you have issues, make sure your build is up to date and your MCP client is configured to use stdio.
+- For questions or contributions, feel free to open an issue or pull request!
 
-## Publishing to NPM
+---
 
-To publish this package to npm:
-
-1. Update the `name` field in your `package.json` to `mcp-server-ddd-sample` (or your preferred name).
-2. Run the following commands:
-
-```bash
-npm login
-npm publish --access public
-```
-
-After publishing, users can run the server with `npx mcp-server-ddd-sample`.
-
-## Contributing
-
-Pull requests are welcome! Feel free to open issues or suggest improvements for this sample repository.
-
-## Project URL
-
-[https://github.com/alexandresanlim/mempool-mcp-server](https://github.com/alexandresanlim/mempool-mcp-server)
+Made with ❤️ by the community. Happy hacking!
