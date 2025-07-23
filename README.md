@@ -6,36 +6,38 @@ A Model Context Protocol (MCP) server providing real-time Bitcoin blockchain and
 
 ## 🛠️ Available Bitcoin Tools
 
-- **get-difficulty-adjustment**: Get current and next Bitcoin difficulty adjustment info.
-- **get-price**: Get the current BTC price in various fiat currencies.
-- **get-historical-price**: Get the BTC price for a specific date (YYYY-MM-DD).
-- **get-recommended-fees**: Get recommended Bitcoin transaction fees.
-- **get-stats-info**: Get general Bitcoin network statistics.
-- **get-mining-pools**: Get mining pools info.
-- **get-mining-pool**: Get info for a specific mining pool.
-- **get-mining-blocks-fees-24h**: Get mining blocks fees for the last 24h.
-- **get-mempool-info**: Get mempool info.
-- **get-mempool-txids**: Get mempool txids.
-- **get-mempool-recent**: Get recent mempool transactions.
-- **get-blocks**: Get the latest blocks.
-- **get-block**: Get details about a block from its hash.
-- **get-block-txids**: Get txids for a block.
-- **get-block-txs**: Get transactions for a block.
-- **get-block-status**: Get block status.
-- **get-block-raw**: Get raw block hex.
-- **get-block-txid-by-index**: Get block txid by index.
-- **get-block-header**: Get the block header in hex.
-- **get-address-info**: Get details about an address.
-- **get-address-txs**: Get transactions for an address.
-- **get-address-txs-chain**: Get chain transactions for an address.
-- **get-address-txs-mempool**: Get mempool transactions for an address.
-- **get-address-utxo**: Get UTXOs for an address.
-- **get-tx-info**: Get details about a transaction.
-- **get-tx-status**: Get transaction status.
-- **get-tx-raw**: Get raw transaction hex.
-- **get-tx-merkleblock-proof**: Get transaction merkleblock proof.
-- **get-tx-outspend**: Get outspend info for a transaction output.
-- **get-tx-outspends**: Get outspends for all outputs of a transaction.
+| Tool Name | Description |
+|-----------|-------------|
+| **get-difficulty-adjustment** | Get current and next Bitcoin difficulty adjustment info. |
+| **get-price** | Get the current BTC price in various fiat currencies. |
+| **get-historical-price** | Get the BTC price for a specific date (YYYY-MM-DD). |
+| **get-recommended-fees** | Get recommended Bitcoin transaction fees. |
+| **get-stats-info** | Get general Bitcoin network statistics. |
+| **get-mining-pools** | Get mining pools info. |
+| **get-mining-pool** | Get info for a specific mining pool. |
+| **get-mining-blocks-fees-24h** | Get mining blocks fees for the last 24h. |
+| **get-mempool-info** | Get mempool info. |
+| **get-mempool-txids** | Get mempool txids. |
+| **get-mempool-recent** | Get recent mempool transactions. |
+| **get-blocks** | Get the latest blocks. |
+| **get-block** | Get details about a block from its hash. |
+| **get-block-txids** | Get txids for a block. |
+| **get-block-txs** | Get transactions for a block. |
+| **get-block-status** | Get block status. |
+| **get-block-raw** | Get raw block hex. |
+| **get-block-txid-by-index** | Get block txid by index. |
+| **get-block-header** | Get the block header in hex. |
+| **get-address-info** | Get details about an address. |
+| **get-address-txs** | Get transactions for an address. |
+| **get-address-txs-chain** | Get chain transactions for an address. |
+| **get-address-txs-mempool** | Get mempool transactions for an address. |
+| **get-address-utxo** | Get UTXOs for an address. |
+| **get-tx-info** | Get details about a transaction. |
+| **get-tx-status** | Get transaction status. |
+| **get-tx-raw** | Get raw transaction hex. |
+| **get-tx-merkleblock-proof** | Get transaction merkleblock proof. |
+| **get-tx-outspend** | Get outspend info for a transaction output. |
+| **get-tx-outspends** | Get outspends for all outputs of a transaction. |
 
 ---
 
@@ -60,7 +62,7 @@ You can configure this server as a tool provider in your MCP-compatible client i
 },
 ```
 
-To local connection to privacy and unlimited call you can pass the base mempool api URL as a env config from your local Bitcoin node as Umbrel, MyNode and etc. See bellow:
+To connect locally for privacy and unlimited calls, you can pass the base mempool API URL as an environment config from your local Bitcoin node such as Umbrel, MyNode, etc. See below:
 
 ```json
 "mempool-mcp-server-local": {
@@ -68,7 +70,7 @@ To local connection to privacy and unlimited call you can pass the base mempool 
   "args": [
     "@sanlim/mempool-mcp-server"
   ],
-    "env": {
+  "env": {
     "MEMPOOL_BASE_URL": "http://umbrel.local:3006/api"
   }
 },
