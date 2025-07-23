@@ -63,7 +63,7 @@ You can configure this server as a tool provider in your MCP-compatible client i
 ```
 
 > [!TIP]
-> To connect locally for privacy and unlimited calls, you can pass the base mempool API URL as an environment config from your local Bitcoin node such as Umbrel, MyNode, etc. See below
+> To connect locally for privacy and unlimited calls, you can pass the base mempool API URL as an environment config from your local Bitcoin node such as Umbrel, MyNode, etc. See below:
 > ```json
 >"mempool-mcp-server-local": {
 >  "command": "npx",
@@ -75,7 +75,7 @@ You can configure this server as a tool provider in your MCP-compatible client i
 >  }
 >},
 >```
-> Check this working with "mempool url" text on your MCP Client
+> Check this working with "mempool url" text on your MCP Client.
 > 
 > <img src='https://github.com/alexandresanlim/mempool-mcp-server/blob/main/src/application/images/base_url_check.png?raw=true' width=600 />
 
