@@ -25,7 +25,7 @@ npm publish
 
 npx @modelcontextprotocol/inspector node main.js
 npx @modelcontextprotocol/inspector .../path/main.js args...
-npx mcp-server-ddd-sample --help
+npx mempool-mcp-server --help
 
 ```
 

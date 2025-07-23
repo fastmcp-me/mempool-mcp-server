@@ -3,7 +3,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { BaseToolsController } from "./base/BaseToolsController.js";
 import { BlockService } from "../../application/services/BlockService.js";
-import { IBlockRequestParameter } from "../../shared/parameters/IBlockRequestParameter.js";
+import { IHashParameter } from "../../shared/parameters/IHashParameter.js";
 
 export class BlockToolsController extends BaseToolsController {
   constructor(server: McpServer, private service: BlockService) {
@@ -21,7 +21,7 @@ export class BlockToolsController extends BaseToolsController {
       {
         hash: z.string().length(64).describe("The hash info to get block"),
       },
-      async ({ hash }: IBlockRequestParameter) => {
+      async ({ hash }: IHashParameter) => {
         const text = await this.service.getBlock({ hash });
 
         return {

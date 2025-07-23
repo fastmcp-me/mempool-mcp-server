@@ -51,8 +51,8 @@ src/
 ## Getting Started
 
 ```bash
-git clone https://github.com/alexandresanlim/mcp-server-ddd-sample.git
-cd mcp-server-ddd-sample
+git clone https://github.com/alexandresanlim/mempool-mcp-server.git
+cd mempool-mcp-server
 npm install
 npm run build
 ```
@@ -65,11 +65,11 @@ After building, you can run the server directly:
 node build/main.js
 ```
 
-Or, if registered as a binary (for example, `mcp-server-ddd-sample`):
+Or, if registered as a binary (for example, `mempool-mcp-server`):
 
 ```bash
 npm link
-mcp-server-ddd-sample
+mempool-mcp-server
 ```
 
 The server will start on standard output (_stdio_) and wait for MCP requests.
@@ -88,20 +88,20 @@ To use this MCP server as a tool provider in a client (e.g., Claude client), you
 "btc-server": {
     "command": "node",
     "args": [
-        "{your path project}/mcp-server-ddd-sample/build/main.js"
+        "{your path project}/mempool-mcp-server/build/main.js"
     ]
 },
 ```
 
 ### Using the Published NPM Package
 
-If the package is published to npm as `mcp-server-ddd-sample`, you can use `npx` to run it directly without cloning or building:
+If the package is published to npm as `mempool-mcp-server`, you can use `npx` to run it directly without cloning or building:
 
 ```json
 "mcp-ddd-server-package": {
     "command": "npx",
     "args": [
-        "mcp-server-ddd-sample"
+        "mempool-mcp-server"
     ]
 },
 ```
@@ -128,4 +128,4 @@ Pull requests are welcome! Feel free to open issues or suggest improvements for 
 
 ## Project URL
 
-[https://github.com/alexandresanlim/mcp-server-ddd-sample](https://github.com/alexandresanlim/mcp-server-ddd-sample)
+[https://github.com/alexandresanlim/mempool-mcp-server](https://github.com/alexandresanlim/mempool-mcp-server)

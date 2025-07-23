@@ -1,10 +1,10 @@
 {
-  "name": "mcp-server-ddd-sample",
+  "name": "@sanlim/mempool-mcp-server",
   "version": "1.0.0",
   "type": "module",
   "main": "./build/main.js",
   "bin": {
-    "mcp-server-ddd-sample": "./build/main.js"
+    "mempool-mcp-server": "./build/main.js"
   },
   "files": [
     "build",
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexandresanlim/mcp-server-ddd-sample.git"
+    "url": "git+https://github.com/alexandresanlim/mempool-mcp-server.git"
   },
   "bugs": {
-    "url": "https://github.com/alexandresanlim/mcp-server-ddd-sample/issues"
+    "url": "https://github.com/alexandresanlim/mempool-mcp-server/issues"
   },
-  "homepage": "https://github.com/alexandresanlim/mcp-server-ddd-sample",
+  "homepage": "https://github.com/alexandresanlim/mempool-mcp-server",
   "keywords": [
     "mcp",
     "mcpServers",
