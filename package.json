@@ -1,0 +1,49 @@
+{
+  "name": "mcp-server-ddd-sample",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./build/main.js",
+  "bin": {
+    "mcp-server-ddd-sample": "./build/main.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && chmod 755 build/main.js",
+    "build:windows": "tsc",
+    "server": "node build/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandresanlim/mcp-server-ddd-sample.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandresanlim/mcp-server-ddd-sample/issues"
+  },
+  "homepage": "https://github.com/alexandresanlim/mcp-server-ddd-sample",
+  "keywords": [
+    "mcp",
+    "mcpServers",
+    "mcp-server",
+    "btc",
+    "bitcoin"
+  ],
+  "author": "Alexandre Sanlim <@alexandresanlim> (https://github.com/alexandresanlim)",
+  "license": "ISC",
+  "description": "A sample of MCP implementation using DDD structure with some APIs call.",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.9.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "^5.8.3"
+  }
+}
