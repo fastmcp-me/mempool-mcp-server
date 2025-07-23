@@ -49,9 +49,7 @@ A Model Context Protocol (MCP) server providing real-time Bitcoin blockchain and
 
 ## ⚡ Quick Start: Use in Your MCP Client
 
-You can configure this server as a tool provider in your MCP-compatible client in two ways:
-
-### 📦 Using the Published NPM Package
+You can configure this server as a tool provider in your MCP Client client preference such Claude, Cursor, VsCode and others:
 
 ```json
 "mempool-mcp-server": {
