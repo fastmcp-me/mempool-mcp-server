@@ -1,6 +1,6 @@
 # 🚀 Mempool MCP Server
 
-A Model Context Protocol (MCP) server providing real-time Bitcoin blockchain and mempool data, powered by [mempool.space](https://mempool.space/) APIs. Use this server as a tool provider in your MCP-compatible clients (like Claude, Cursor, and others) to access up-to-date Bitcoin network information.
+A Model Context Protocol (MCP) server providing real-time Bitcoin blockchain and mempool data, powered by [mempool.space](https://mempool.space/) APIs. Use this server as a tool provider in your MCP-compatible clients (like Claude, Cursor, and others) to access up-to-date Bitcoin network information. Its an unofficial repository.
 
 ---
 
