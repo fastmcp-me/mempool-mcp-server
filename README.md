@@ -103,7 +103,7 @@ npm run server
 "mempool-mcp-server-debug": {
   "command": "node",
   "args": [
-    "/Users/aleguest/Desktop/workspace/mempool-mcp-server/build/main.js"
+    "...replace_to_path_of_project/mempool-mcp-server/build/main.js"
   ]
 },
 ```
